@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link href="fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="fontawesome/css/brands.css" rel="stylesheet">
+  <link href="fontawesome/css/solid.css" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <div id="app">
+    <div id="background" class="day"></div>
+    <div id="splash" class="view active-view">
+      <div id="splash-dash" class="view active-view">
+        <div id="notification-container"></div>
+        <div id="date-time-container">
+          <div id="time" class="title"></div>
+          <div id="date" class="title"></div>
+        </div>
+        <div class="bottom button button-small bounce rounded blur fa-solid fa-arrow-right-to-bracket"
+        onclick="switchView(splash.login)"></div>
+      </div>
+      <div id="splash-login" class="view">
+        <div id="pin-container" onclick="focusOnPin()">
+          <input id="pin-hidden-input" maxlength="4" type="number" value="" onkeyup="" class="no-select">
+          <div class="pin square blur blink"><span class="pin-digit"></span></div>
+          <div class="pin square blur"><span class="pin-digit"></span></div>
+          <div class="pin square blur"><span class="pin-digit"></span></div>
+          <div class="pin square blur"><span class="pin-digit"></span></div>
+        </div>
+        <div id="pin-content" class="flex col center">
+          <div class="flex row">
+            <div class="button rounded blur button-half" onclick="validateUser()"><span>Login</span></div>
+            <div class="button rounded blur button-half" onclick="switchView(splash.dash)"><span>Cancel</span></div>
+          </div>
+          <div id="singup-back-button" class="flex">
+            <div class="button rounded blur button-max" onclick="switchView(splash.signup)"><span>Signup</span></div>
+          </div>
+        </div>
+
+      </div>
+      <div id="splash-signup" class="view square blur large">
+        <div id="signup-form"></div>
+        <div id="signup-buttons" class="flex row">
+          <div class="button rounded blur button-half"><span>Signup</span></div>
+          <div class="button rounded blur button-half" onclick="switchView(splash.login)"><span>Cancel</span></div>
+        </div>
+      </div>
+    </div>
+    <div id="home" class="view">
+      <div id="nav-button" class="bottom button button-small rounded blur fixed fa-solid fa-arrow-right-to-bracket"
+           onclick="switchView(splash.dash), resetScroll()"></div>
+      <div id="home-nav-container" class="bottom flex row nav blur">
+        <div id="nav-bg" class=""></div>
+        <div class="nav-group nav-active" onclick=""><a>Dashboard</a><div class="nav-icon"></div></div>
+        <div class="nav-group"><a>Faults</a><div class="nav-icon"></div></div>
+        <div class="nav-group"><a>Schedule</a><div class="nav-icon"></div></div>
+        <div id="button-spacer"></div>
+        <div class="nav-group"><a>Todo</a><div class="nav-icon"></div></div>
+        <div class="nav-group"><a>Messages</a><div class="nav-icon"></div></div>
+        <div class="nav-group"><a>Parts Tracker</a><div class="nav-icon"></div></div>
+      </div>
+      <div id="home-settings-container" class="view square blur large"></div>
+      <div id="home-content" class="view flex col">
+        <div id="home-content-dash" class="section square large">
+          <div id="home-dash-header" class="title smooth-scroll"><span>Welcome back! </span><span></span></div>
+        </div>
+        <div id="home-content-faults" class="section square blur large"></div>
+        <div id="home-content-schedule" class="section square blur large"></div>
+        <div id="home-content-todo" class="section square blur large"></div>
+        <div id="home-content-messages" class="section square blur large"></div>
+        <div id="home-content-partsTracker" class="section square blur large"></div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.6.1.min.js"></script>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/appRunner.js"></script>
+  <script src="js/viewHandler.js"></script>
+  <script src="js/dateTimeHandler.js"></script>
+  <script src="js/pinHandler.js"></script>
+  <script src="js/keyListeners.js"></script>
+  <script src=""></script>
+</body>
+
+</html>
